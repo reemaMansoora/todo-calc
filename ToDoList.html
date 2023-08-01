@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>Todo List</title>
+</head>
+<body>
+    <h1>Note down your daily activities!</h1>
+    <h4>Use the button to save a note <br>
+        (click)-for completed task <br>
+        (doubleclick)-for deleting note     </h4>
+    <div class="cont">
+        <input id="ipfield" type="text" placeholder=" "><button id="enter">+</button>
+  <div class="lists" id="todos">
+<p> </p>
+  </div>
+ 
+        
+    </div> 
+    <script>
+         let ab=document.getElementById('enter');
+         let tc=document.getElementById('todos');
+         let ip=document.getElementById('ipfield'); 
+
+ab.addEventListener('click',function(){
+var par=document.createElement('p');
+par.classList.add("paragraph-styling");
+par.innerText=ip.value;
+tc.appendChild(par);
+ip.value="";
+par.addEventListener('click',function(){
+par.style.textDecoration="line-through";
+})
+par.addEventListener('dblclick',function(){
+    tc.removeChild(par);
+})
+})
+
+
+
+
+
+    </script>
+</body>
+</html>
